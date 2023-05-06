@@ -1,0 +1,1 @@
+dotnet ef database update --project src/HackTest.Infrastructure --startup-project src/HackTest.API 
