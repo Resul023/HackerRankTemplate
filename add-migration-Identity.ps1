@@ -1,0 +1,1 @@
+dotnet ef migrations add Initialize_$(Get-Date -Format "ddMMyyyHHmmss") --project IdentityServer/IdentityServer.API --startup-project IdentityServer/IdentityServer.API --output-dir Migrations

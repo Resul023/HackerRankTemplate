@@ -1,9 +1,7 @@
-﻿using HackTest.Application.Common.Interfaces;
-using HackTest.Infrastructure.Identity;
-using HackTest.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using HackTest.Infrastructure.Persistence;
+using HackTest.Application.Common.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HackTest.Infrastructure;
@@ -19,14 +17,6 @@ public static class ConfigureServices
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
         //services.AddScoped<ApplicationDbContextInitialiser>();
-
-        services.AddDefaultIdentity<ApplicationUser>()
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
-
-        services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
         return services;
     }
 }
